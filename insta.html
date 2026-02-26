@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Bio Generator - ToolNova</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial; background:#111; color:white; text-align:center; padding:20px; }
+        input, textarea, button { padding:10px; margin:10px 0; width:80%; max-width:300px; border-radius:5px; border:none; }
+        button { background:#00c3ff; color:black; font-weight:bold; cursor:pointer; }
+        button:hover { background:#00a2d6; }
+        .output { background:#222; padding:15px; margin-top:20px; border-radius:5px; }
+        a { color:#00c3ff; display:block; margin-top:20px; text-decoration:none; }
+    </style>
+</head>
+<body>
+
+<h2>Instagram Bio Generator</h2>
+<p>Type a few words and get a cool Instagram bio!</p>
+
+<input type="text" id="bioInput" placeholder="Enter a few words...">
+<button onclick="generateBio()">Generate Bio</button>
+
+<div class="output" id="bioOutput">Your generated bio will appear here</div>
+
+<a href="index.html">← Back to Homepage</a>
+
+<script>
+function generateBio() {
+    const input = document.getElementById('bioInput').value.trim();
+    if(!input) { alert('Please enter some words!'); return; }
+    
+    // Simple generator examples
+    const styles = [
+        `✨ ${input} ✨`,
+        `🔥 ${input} 🔥`,
+        `💎 ${input} 💎`,
+        `🎯 ${input} 🎯`,
+        `${input} | Dreamer`
+    ];
+    
+    const randomIndex = Math.floor(Math.random() * styles.length);
+    document.getElementById('bioOutput').innerText = styles[randomIndex];
+}
+</script>
+
+</body>
+</html>
